@@ -25,14 +25,17 @@
     <Filter Include="소스 파일\Core\lib">
       <UniqueIdentifier>{a5a2fe03-10dd-4af1-81d4-6274350ff190}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Core\Object\Virus_Scene">
-      <UniqueIdentifier>{f231505c-22ca-46be-8e6f-ce831b8dab3a}</UniqueIdentifier>
+    <Filter Include="소스 파일\Virus">
+      <UniqueIdentifier>{635c4952-5d51-40e6-82d7-e87fd79dcb42}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Core\Object\Virus_Sprite">
+    <Filter Include="소스 파일\Virus\Virus_Sprite">
       <UniqueIdentifier>{089d7f53-7823-4f8e-9f46-132c7028af6d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\Core\Object\Virus_Pattern">
+    <Filter Include="소스 파일\Virus\Virus_Pattern">
       <UniqueIdentifier>{8f95fc90-71f0-4dd9-833f-aa731edf8788}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Virus\Virus_Scene">
+      <UniqueIdentifier>{f231505c-22ca-46be-8e6f-ce831b8dab3a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,22 +73,22 @@
       <Filter>소스 파일\Core\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Scene_MainMenu.h">
-      <Filter>소스 파일\Core\Object\Virus_Scene</Filter>
+      <Filter>소스 파일\Virus\Virus_Scene</Filter>
     </ClInclude>
     <ClInclude Include="Scene_Game.h">
-      <Filter>소스 파일\Core\Object\Virus_Scene</Filter>
+      <Filter>소스 파일\Virus\Virus_Scene</Filter>
     </ClInclude>
     <ClInclude Include="Sprite_Player.h">
-      <Filter>소스 파일\Core\Object\Virus_Sprite</Filter>
+      <Filter>소스 파일\Virus\Virus_Sprite</Filter>
     </ClInclude>
     <ClInclude Include="TimeManager.h">
       <Filter>소스 파일\Core\Manager</Filter>
     </ClInclude>
     <ClInclude Include="Sprite_Virus.h">
-      <Filter>소스 파일\Core\Object\Virus_Sprite</Filter>
+      <Filter>소스 파일\Virus\Virus_Sprite</Filter>
     </ClInclude>
     <ClInclude Include="Sprite_VirusDebris.h">
-      <Filter>소스 파일\Core\Object\Virus_Sprite</Filter>
+      <Filter>소스 파일\Virus\Virus_Sprite</Filter>
     </ClInclude>
     <ClInclude Include="TextManager.h">
       <Filter>소스 파일\Core\Manager</Filter>
@@ -94,19 +97,19 @@
       <Filter>소스 파일\Core\lib</Filter>
     </ClInclude>
     <ClInclude Include="Scene_Credit.h">
-      <Filter>소스 파일\Core\Object\Virus_Scene</Filter>
+      <Filter>소스 파일\Virus\Virus_Scene</Filter>
     </ClInclude>
     <ClInclude Include="Scene_Rule.h">
-      <Filter>소스 파일\Core\Object\Virus_Scene</Filter>
+      <Filter>소스 파일\Virus\Virus_Scene</Filter>
     </ClInclude>
     <ClInclude Include="Scene_Score.h">
-      <Filter>소스 파일\Core\Object\Virus_Scene</Filter>
+      <Filter>소스 파일\Virus\Virus_Scene</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="VirusPattern.h">
-      <Filter>소스 파일\Core\Object\Virus_Pattern</Filter>
+      <Filter>소스 파일\Virus\Virus_Pattern</Filter>
     </ClInclude>
     <ClInclude Include="Text.h">
       <Filter>소스 파일\Core\Object</Filter>
@@ -138,37 +141,37 @@
       <Filter>소스 파일\Core\Object</Filter>
     </ClCompile>
     <ClCompile Include="Scene_MainMenu.cpp">
-      <Filter>소스 파일\Core\Object\Virus_Scene</Filter>
+      <Filter>소스 파일\Virus\Virus_Scene</Filter>
     </ClCompile>
     <ClCompile Include="Scene_Game.cpp">
-      <Filter>소스 파일\Core\Object\Virus_Scene</Filter>
+      <Filter>소스 파일\Virus\Virus_Scene</Filter>
     </ClCompile>
     <ClCompile Include="Sprite_Player.cpp">
-      <Filter>소스 파일\Core\Object\Virus_Sprite</Filter>
+      <Filter>소스 파일\Virus\Virus_Sprite</Filter>
     </ClCompile>
     <ClCompile Include="TimeManager.cpp">
       <Filter>소스 파일\Core\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Sprite_Virus.cpp">
-      <Filter>소스 파일\Core\Object\Virus_Sprite</Filter>
+      <Filter>소스 파일\Virus\Virus_Sprite</Filter>
     </ClCompile>
     <ClCompile Include="Sprite_VirusDebris.cpp">
-      <Filter>소스 파일\Core\Object\Virus_Sprite</Filter>
+      <Filter>소스 파일\Virus\Virus_Sprite</Filter>
     </ClCompile>
     <ClCompile Include="TextManager.cpp">
       <Filter>소스 파일\Core\Manager</Filter>
     </ClCompile>
     <ClCompile Include="Scene_Score.cpp">
-      <Filter>소스 파일\Core\Object\Virus_Scene</Filter>
+      <Filter>소스 파일\Virus\Virus_Scene</Filter>
     </ClCompile>
     <ClCompile Include="Scene_Credit.cpp">
-      <Filter>소스 파일\Core\Object\Virus_Scene</Filter>
+      <Filter>소스 파일\Virus\Virus_Scene</Filter>
     </ClCompile>
     <ClCompile Include="Scene_Rule.cpp">
-      <Filter>소스 파일\Core\Object\Virus_Scene</Filter>
+      <Filter>소스 파일\Virus\Virus_Scene</Filter>
     </ClCompile>
     <ClCompile Include="VirusPattern.cpp">
-      <Filter>소스 파일\Core\Object\Virus_Pattern</Filter>
+      <Filter>소스 파일\Virus\Virus_Pattern</Filter>
     </ClCompile>
     <ClCompile Include="VirusMain.cpp">
       <Filter>소스 파일</Filter>
