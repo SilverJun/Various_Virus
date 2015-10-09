@@ -2,6 +2,8 @@
 #include "Scene_Credit.h"
 
 #include "TextManager.h"
+#include "EventManager.h"
+#include "SceneManager.h"
 
 
 CScene_Credit::CScene_Credit() : CScene(5)
@@ -28,6 +30,7 @@ CScene_Credit::CScene_Credit() : CScene(5)
 
 CScene_Credit::~CScene_Credit()
 {
+	Release();
 }
 
 
@@ -42,7 +45,10 @@ void CScene_Credit::Init()
 
 void CScene_Credit::Update()
 {
-
+	if (g_EventManager->g_Event.type == SDL_KEYDOWN)
+	{
+		g_SceneManager->SetScene(sMainMenu);
+	}
 }
 
 

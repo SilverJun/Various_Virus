@@ -113,7 +113,6 @@ bool CEventManager::CheckCollition(SDL_Rect mask1, SDL_Rect mask2)
 	{
 		if ((mask1.y <= mask2.y || mask1.y <= mask2.y + mask2.h) && mask1.y + mask1.h >= mask2.y)
 		{
-			//printf("Ãæµ¹");
 			return true;
 		}
 		else
