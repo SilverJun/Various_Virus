@@ -111,6 +111,21 @@
     <ClInclude Include="Text.h">
       <Filter>소스 파일\Core\Object</Filter>
     </ClInclude>
+    <ClInclude Include="Pattern_Strategy.h">
+      <Filter>소스 파일\Virus\Virus_Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Cencer.h">
+      <Filter>소스 파일\Virus\Virus_Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Gastritis.h">
+      <Filter>소스 파일\Virus\Virus_Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Hemorrhage.h">
+      <Filter>소스 파일\Virus\Virus_Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Pain.h">
+      <Filter>소스 파일\Virus\Virus_Pattern</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -175,6 +190,21 @@
     </ClCompile>
     <ClCompile Include="Text.cpp">
       <Filter>소스 파일\Core\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Strategy.cpp">
+      <Filter>소스 파일\Virus\Virus_Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Cencer.cpp">
+      <Filter>소스 파일\Virus\Virus_Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Gastritis.cpp">
+      <Filter>소스 파일\Virus\Virus_Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Hemorrhage.cpp">
+      <Filter>소스 파일\Virus\Virus_Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Pain.cpp">
+      <Filter>소스 파일\Virus\Virus_Pattern</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

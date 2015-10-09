@@ -96,6 +96,11 @@
     <ClInclude Include="DrawManager.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="han2unicode.h" />
+    <ClInclude Include="Pattern_Cencer.h" />
+    <ClInclude Include="Pattern_Gastritis.h" />
+    <ClInclude Include="Pattern_Hemorrhage.h" />
+    <ClInclude Include="Pattern_Pain.h" />
+    <ClInclude Include="Pattern_Strategy.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Scene_Credit.h" />
@@ -120,6 +125,11 @@
     <ClCompile Include="Director.cpp" />
     <ClCompile Include="DrawManager.cpp" />
     <ClCompile Include="EventManager.cpp" />
+    <ClCompile Include="Pattern_Cencer.cpp" />
+    <ClCompile Include="Pattern_Gastritis.cpp" />
+    <ClCompile Include="Pattern_Hemorrhage.cpp" />
+    <ClCompile Include="Pattern_Pain.cpp" />
+    <ClCompile Include="Pattern_Strategy.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Scene_Credit.cpp" />
