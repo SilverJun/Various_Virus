@@ -52,19 +52,19 @@ void CScene_MainMenu::Update()
 		{
 			g_SceneManager->SetScene(sGame);
 		}
-		if (g_EventManager->CheckCollition_by_mouse(MenuBox[Rule]))
+		else if (g_EventManager->CheckCollition_by_mouse(MenuBox[Rule]))
 		{
 			g_SceneManager->SetScene(sRule);
 		} 
-		if (g_EventManager->CheckCollition_by_mouse(MenuBox[Score]))
+		else if (g_EventManager->CheckCollition_by_mouse(MenuBox[Score]))
 		{
 			g_SceneManager->SetScene(sScore);
 		}
-		if (g_EventManager->CheckCollition_by_mouse(MenuBox[Credit]))
+		else if (g_EventManager->CheckCollition_by_mouse(MenuBox[Credit]))
 		{
 			g_SceneManager->SetScene(sCredit);
 		}
-		if (g_EventManager->CheckCollition_by_mouse(MenuBox[Exit]))
+		else if (g_EventManager->CheckCollition_by_mouse(MenuBox[Exit]))
 		{
 			g_Director->GameDone = true;
 		}

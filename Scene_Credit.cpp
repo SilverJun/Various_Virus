@@ -12,7 +12,7 @@ CScene_Credit::CScene_Credit() : CScene(5)
 	CreditBox[3] = { 200, 450, 0, 50 };
 	CreditBox[4] = { 200, 600, 0, 50 };
 
-	strcpy(CreditString[0], "*제작자*");
+	strcpy(CreditString[0], "* 제작자 *");
 	strcpy(CreditString[1], "기획 : 이용희");
 	strcpy(CreditString[2], "프로그래밍 : 장은준");
 	strcpy(CreditString[3], "그래픽 : 박정후");
@@ -42,7 +42,6 @@ void CScene_Credit::Init()
 
 void CScene_Credit::Update()
 {
-
 
 }
 

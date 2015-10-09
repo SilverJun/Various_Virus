@@ -126,9 +126,9 @@ bool CEventManager::CheckCollition(SDL_Rect mask1, SDL_Rect mask2)
 
 bool CEventManager::CheckCollition_by_mouse(SDL_Rect mask)
 {
-	if ((g_Event.motion.x <= mask.x || g_Event.motion.x <= mask.x + mask.w) && g_Event.motion.x >= mask.x)
+	if (g_Event.motion.x >= mask.x && g_Event.motion.x <= mask.x + mask.w)
 	{
-		if ((g_Event.motion.y <= mask.y || g_Event.motion.y <= mask.y + mask.h) && g_Event.motion.y + mask.h >= mask.y)
+		if (g_Event.motion.y >= mask.y && g_Event.motion.y <= mask.y + mask.h)
 		{
 			return true;
 		}
