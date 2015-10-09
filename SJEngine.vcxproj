@@ -96,7 +96,6 @@
     <ClInclude Include="DrawManager.h" />
     <ClInclude Include="EventManager.h" />
     <ClInclude Include="han2unicode.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Scene_Credit.h" />

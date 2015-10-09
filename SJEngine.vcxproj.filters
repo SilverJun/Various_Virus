@@ -105,9 +105,6 @@
     <ClInclude Include="Scene_Score.h">
       <Filter>소스 파일\Virus\Virus_Scene</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="VirusPattern.h">
       <Filter>소스 파일\Virus\Virus_Pattern</Filter>
     </ClInclude>
