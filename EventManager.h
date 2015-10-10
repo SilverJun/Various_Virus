@@ -1,6 +1,6 @@
 #pragma once
 #include "Singleton.h"
-
+#include "Sprite.h"
 class CEventManager : public Singleton<CEventManager>
 {
 public:
@@ -23,6 +23,7 @@ public:
 
 	bool CheckCollition(SDL_Rect mask1, SDL_Rect mask2);
 	bool CheckCollition_by_mouse(SDL_Rect mask);
+	bool CheckCollition_by_Circle(CSprite *Circle, SDL_Rect mask);
 
 };
 

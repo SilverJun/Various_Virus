@@ -13,6 +13,7 @@
 #include <vector>
 #include <deque>
 #include <ctime>
+#include <cmath>
 
 //======== 추가 라이브러리 헤더 ========
 #include <SDL.h>

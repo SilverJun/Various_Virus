@@ -6,5 +6,7 @@ class CPattern_Cencer :
 public:
 	CPattern_Cencer();
 	~CPattern_Cencer();
+
+	virtual void Behavior() override;
 };
 

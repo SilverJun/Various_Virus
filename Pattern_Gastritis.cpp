@@ -10,3 +10,8 @@ CPattern_Gastritis::CPattern_Gastritis()
 CPattern_Gastritis::~CPattern_Gastritis()
 {
 }
+
+
+void CPattern_Gastritis::Behavior()
+{
+}

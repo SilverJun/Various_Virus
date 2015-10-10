@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "SceneManager.h"
+
+
 #include "EventManager.h"
 
 
@@ -138,3 +140,30 @@ bool CEventManager::CheckCollition_by_mouse(SDL_Rect mask)
 	}
 	return false;
 }
+
+
+bool CEventManager::CheckCollition_by_Circle(CSprite *Circle, SDL_Rect mask)
+{
+	SDL_Point CircleCenter = { Circle->GetSpriteCenter()->x, Circle->GetSpriteCenter()->y };
+	float r = Circle->GetSpriteRect()->w / 2;
+	
+	SDL_Point Pos[4] = {
+		{ mask.x, mask.y },
+		{ mask.x + mask.w, mask.y },
+		{ mask.x, mask.y + mask.h },
+		{ mask.x + mask.w, mask.y + mask.h } 
+	};
+
+	float d;
+	
+	for (int i = 0; i < 4; i++)
+	{
+		d = sqrtf((Pos[i].x + Pos[i].y)*(Pos[i].x + Pos[i].y) + (CircleCenter.x + CircleCenter.y)*(CircleCenter.x + CircleCenter.y));
+		if (d - r <= 0)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+	

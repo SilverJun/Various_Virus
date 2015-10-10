@@ -10,3 +10,7 @@ CPattern_Cencer::CPattern_Cencer()
 CPattern_Cencer::~CPattern_Cencer()
 {
 }
+
+void CPattern_Cencer::Behavior()
+{
+}

@@ -6,5 +6,7 @@ class CPattern_Gastritis :
 public:
 	CPattern_Gastritis();
 	~CPattern_Gastritis();
+
+	virtual void Behavior() override;
 };
 

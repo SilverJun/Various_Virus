@@ -9,6 +9,7 @@
 #include "Sprite_Virus.h"
 #include "Sprite_VirusDebris.h"
 
+
 CScene_Game::CScene_Game() : CScene(2)
 {
 	addSprite(new CSprite_Player());
@@ -17,6 +18,7 @@ CScene_Game::CScene_Game() : CScene(2)
 	Virus_Debris_Count = 0;
 	Virus_Debris_Eaten = 0;
 	Vaccine_Usable = 5;
+	Pattern = new VirusPattern();
 }
 
 
@@ -188,7 +190,7 @@ void CScene_Game::Update()
 			vSprite[i]->Update();
 			if (vSprite[i]->GetSpriteName() == "VirusDebris")
 			{
-				if (g_EventManager->CheckCollition(*vSprite[i]->GetSpriteRect(), *vSprite[0]->GetSpriteMask()))
+				if (/*g_EventManager->CheckCollition(*vSprite[i]->GetSpriteRect(), *vSprite[0]->GetSpriteMask())*/g_EventManager->CheckCollition_by_Circle(vSprite[i], *vSprite[0]->GetSpriteMask()))
 				{
 					delete vSprite[i];
 					Virus_Debris_Count--;
@@ -210,5 +212,6 @@ void CScene_Game::Update()
 void CScene_Game::Release()
 {
 	g_TextManager->DestroyTextAll();
+	delete Pattern;
 }
 

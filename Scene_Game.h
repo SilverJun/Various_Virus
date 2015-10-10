@@ -1,5 +1,8 @@
 #pragma once
 #include "Scene.h"
+#include "VirusPattern.h"
+
+
 class CScene_Game : public CScene
 {
 public:
@@ -19,6 +22,7 @@ private:
 	char Virus_Debris_Text[2][100];
 	int Virus_Debris_Text_idx[2];
 
+	VirusPattern *Pattern;
 
 	virtual void Init() override;
 	virtual void Update() override;

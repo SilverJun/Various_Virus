@@ -6,5 +6,7 @@ class CPattern_Hemorrhage :
 public:
 	CPattern_Hemorrhage();
 	~CPattern_Hemorrhage();
+
+	virtual void Behavior() override;
 };
 
