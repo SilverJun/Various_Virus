@@ -41,7 +41,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
+    <LinkIncremental>false</LinkIncremental>
     <IncludePath>C:\FMOD Programmers API Windows\api\inc;C:\SDL2-2.0.3\include;C:\SDL2_image-2.0.0\include;C:\SDL2_ttf-2.0.12\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\FMOD Programmers API Windows\api\lib;C:\SDL2-2.0.3\lib\x86;C:\SDL2_image-2.0.0\lib\x86;C:\SDL2_ttf-2.0.12\lib\x86;$(LibraryPath)</LibraryPath>
     <GenerateManifest>false</GenerateManifest>
@@ -62,8 +62,6 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-      <ShowProgress>LinkVerbose</ShowProgress>
-      <PreventDllBinding>true</PreventDllBinding>
       <DelayLoadDLLs>
       </DelayLoadDLLs>
     </Link>

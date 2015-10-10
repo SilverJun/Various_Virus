@@ -144,8 +144,9 @@ bool CEventManager::CheckCollition_by_mouse(SDL_Rect mask)
 
 bool CEventManager::CheckCollition_by_Circle(CSprite *Circle, SDL_Rect mask)
 {
-	SDL_Point CircleCenter = { Circle->GetSpriteCenter()->x, Circle->GetSpriteCenter()->y };
 	float r = Circle->GetSpriteRect()->w / 2;
+	SDL_Point CircleCenter = { Circle->GetSpriteRect()->x + r, Circle->GetSpriteRect()->y + r };
+
 	
 	SDL_Point Pos[4] = {
 		{ mask.x, mask.y },
@@ -156,12 +157,45 @@ bool CEventManager::CheckCollition_by_Circle(CSprite *Circle, SDL_Rect mask)
 
 	float d;
 	
-	for (int i = 0; i < 4; i++)
+	int i;
+	if (CheckCollition(Circle->GetSpriteRect(),mask))
 	{
-		d = sqrtf((Pos[i].x + Pos[i].y)*(Pos[i].x + Pos[i].y) + (CircleCenter.x + CircleCenter.y)*(CircleCenter.x + CircleCenter.y));
-		if (d - r <= 0)
+		//상황1		-
+		for (i = 0; i + Pos[0].x < Pos[1].x; i++)
 		{
-			return true;
+			d = sqrtf(((CircleCenter.x - (Pos[0].x + i))*(CircleCenter.x - (Pos[0].x + i))) + ((CircleCenter.y - Pos[0].y)*(CircleCenter.y - Pos[0].y)));
+			if (d - r <= 0)
+			{
+				return true;
+			}
+		}
+
+		//상황2		| I
+		for (i = 0; i + Pos[1].y < Pos[3].y; i++)
+		{
+			d = sqrtf(((CircleCenter.x - Pos[1].x)*(CircleCenter.x - Pos[1].x)) + ((CircleCenter.y - (Pos[1].y + i))*(CircleCenter.y - (Pos[1].y + i))));
+			if (d - r <= 0)
+			{
+				return true;
+			}
+		}
+		//상황3		-
+		for (i = 0; i + Pos[3].x < Pos[4].x; i++)
+		{
+			d = sqrtf(((CircleCenter.x - (Pos[3].x + i))*(CircleCenter.x - (Pos[3].x + i))) + ((CircleCenter.y - Pos[3].y)*(CircleCenter.y - Pos[3].y)));
+			if (d - r <= 0)
+			{
+				return true;
+			}
+		}
+		//상황4		I |
+		for (i = 0; i + Pos[0].y < Pos[3].y; i++)
+		{
+			d = sqrtf(((CircleCenter.x - Pos[0].x)*(CircleCenter.x - Pos[0].x)) + ((CircleCenter.y - (Pos[0].y + i))*(CircleCenter.y - (Pos[0].y + i))));
+			if (d - r <= 0)
+			{
+				return true;
+			}
 		}
 	}
 	return false;
