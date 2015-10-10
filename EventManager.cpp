@@ -158,7 +158,7 @@ bool CEventManager::CheckCollition_by_Circle(CSprite *Circle, SDL_Rect mask)
 	float d;
 	
 	int i;
-	if (CheckCollition(Circle->GetSpriteRect(),mask))
+	if (CheckCollition(*Circle->GetSpriteRect(),mask))
 	{
 		//상황1		-
 		for (i = 0; i + Pos[0].x < Pos[1].x; i++)
@@ -179,7 +179,7 @@ bool CEventManager::CheckCollition_by_Circle(CSprite *Circle, SDL_Rect mask)
 				return true;
 			}
 		}
-		//상황3		-
+		//상황3		_
 		for (i = 0; i + Pos[3].x < Pos[4].x; i++)
 		{
 			d = sqrtf(((CircleCenter.x - (Pos[3].x + i))*(CircleCenter.x - (Pos[3].x + i))) + ((CircleCenter.y - Pos[3].y)*(CircleCenter.y - Pos[3].y)));
