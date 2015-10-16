@@ -1,5 +1,8 @@
 #pragma once
 #include "Pattern_Strategy.h"
+
+//create a circle and it goes bigger.
+//this pattern is in center.
 class CPattern_Cencer :
 	public CPattern_Strategy
 {
@@ -9,4 +12,3 @@ public:
 
 	virtual void Behavior() override;
 };
-

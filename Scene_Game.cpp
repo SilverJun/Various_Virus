@@ -190,7 +190,7 @@ void CScene_Game::Update()
 			vSprite[i]->Update();
 			if (vSprite[i]->GetSpriteName() == "VirusDebris")
 			{
-				if (/*g_EventManager->CheckCollition(*vSprite[i]->GetSpriteRect(), *vSprite[0]->GetSpriteMask())*/g_EventManager->CheckCollition_by_Circle(vSprite[i], *vSprite[0]->GetSpriteMask()))
+				if (g_EventManager->CheckCollition(*vSprite[i]->GetSpriteRect(), *vSprite[0]->GetSpriteMask()))
 				{
 					delete vSprite[i];
 					Virus_Debris_Count--;
@@ -206,6 +206,7 @@ void CScene_Game::Update()
 	sprintf(Virus_Debris_Text[1], "먹은 바이러스 수 : %d", Virus_Debris_Eaten);
 	g_TextManager->ModifyText(Virus_Debris_Text[0], Virus_Debris_Text_idx[0]);
 	g_TextManager->ModifyText(Virus_Debris_Text[1], Virus_Debris_Text_idx[1]);
+
 }
 
 
