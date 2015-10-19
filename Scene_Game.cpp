@@ -13,12 +13,14 @@
 CScene_Game::CScene_Game() : CScene(2)
 {
 	addSprite(new CSprite_Player());
+	std::cout << "플레이어 동적할당" << std::endl;
 	VirusCreateTime = 800;
 	VirusCode = RED;
 	Virus_Debris_Count = 0;
 	Virus_Debris_Eaten = 0;
 	Vaccine_Usable = 5;
 	Pattern = new VirusPattern();
+	std::cout << "바이러스패턴관리자 동적할당" << std::endl;
 }
 
 
@@ -35,11 +37,13 @@ void CScene_Game::CreateVirus()
 	if (VirusCode == code)
 	{
 		addSprite(new CSprite_VirusDebris());
+		std::cout << "바이러스잔해 동적할당" << std::endl;
 		Virus_Debris_Count++;
 	}
 	else
 	{
 		addSprite(new CSprite_Virus(code));
+		std::cout << "바이러스 동적할당" << std::endl;
 	}
 }
 
@@ -71,9 +75,9 @@ void CScene_Game::Update()
 			VirusCreateTime -= 10;
 		}
 	}
+	// 키입력 처리
 	if (g_EventManager->g_Event.type == SDL_KEYDOWN)
 	{
-
 		if (g_EventManager->KeyProsess[n1] == true && Virus_Debris_Eaten >= Vaccine_Usable)
 		{
 			VirusCode = RED;
@@ -87,6 +91,7 @@ void CScene_Game::Update()
 						if (static_cast<CSprite_Virus *>(vSprite[i])->CheckCode(VirusCode))
 						{
 							vSprite[i] = new CSprite_VirusDebris(vSprite[i]);
+							std::cout << "바이러스잔해 동적할당" << std::endl;
 							Virus_Debris_Count++;
 						}
 						else
@@ -113,6 +118,7 @@ void CScene_Game::Update()
 						if (static_cast<CSprite_Virus *>(vSprite[i])->CheckCode(VirusCode))
 						{
 							vSprite[i] = new CSprite_VirusDebris(vSprite[i]);
+							std::cout << "바이러스잔해 동적할당" << std::endl;
 							Virus_Debris_Count++;
 						}
 						else
@@ -139,6 +145,7 @@ void CScene_Game::Update()
 						if (static_cast<CSprite_Virus *>(vSprite[i])->CheckCode(VirusCode))
 						{
 							vSprite[i] = new CSprite_VirusDebris(vSprite[i]);
+							std::cout << "바이러스잔해 동적할당" << std::endl;
 							Virus_Debris_Count++;
 						}
 						else
@@ -165,6 +172,7 @@ void CScene_Game::Update()
 						if (static_cast<CSprite_Virus *>(vSprite[i])->CheckCode(VirusCode))
 						{
 							vSprite[i] = new CSprite_VirusDebris(vSprite[i]);
+							std::cout << "바이러스잔해 동적할당" << std::endl;
 							Virus_Debris_Count++;
 						}
 						else
@@ -198,6 +206,75 @@ void CScene_Game::Update()
 					vSprite[i] = nullptr;
 				}
 			}
+			else
+			{
+				SDL_Rect tmp = *vSprite[0]->GetSpriteRect();
+				
+				if (vSprite[0]->GetSpriteDirection() == cLEFT)
+				{
+					tmp.x += 5;
+					if (g_EventManager->CheckCollition(*vSprite[i]->GetSpriteRect(), tmp))
+					{
+						static_cast<CSprite_Player *>(vSprite[0])->SetPlayerbIsMove(false);
+					}
+					else
+					{
+						if (!(*static_cast<CSprite_Player *>(vSprite[0])->GetPlayerbIsMove()))
+						{
+							static_cast<CSprite_Player *>(vSprite[0])->SetPlayerbIsMove(true);
+						}
+						
+					}
+				}
+				if (vSprite[0]->GetSpriteDirection() == cRIGHT)
+				{
+					tmp.x -= 5;
+					if (g_EventManager->CheckCollition(*vSprite[i]->GetSpriteRect(), tmp))
+					{
+						static_cast<CSprite_Player *>(vSprite[0])->SetPlayerbIsMove(false);
+					}
+					else
+					{
+						if (!(*static_cast<CSprite_Player *>(vSprite[0])->GetPlayerbIsMove()))
+						{
+							static_cast<CSprite_Player *>(vSprite[0])->SetPlayerbIsMove(true);
+						}
+
+					}
+				}
+				if (vSprite[0]->GetSpriteDirection() == cUP)
+				{
+					tmp.y += 5;
+					if (g_EventManager->CheckCollition(*vSprite[i]->GetSpriteRect(), tmp))
+					{
+						static_cast<CSprite_Player *>(vSprite[0])->SetPlayerbIsMove(false);
+					}
+					else
+					{
+						if (!(*static_cast<CSprite_Player *>(vSprite[0])->GetPlayerbIsMove()))
+						{
+							static_cast<CSprite_Player *>(vSprite[0])->SetPlayerbIsMove(true);
+						}
+
+					}
+				}
+				if (vSprite[0]->GetSpriteDirection() == cDOWN)
+				{
+					tmp.y -= 5;
+					if (g_EventManager->CheckCollition(*vSprite[i]->GetSpriteRect(), tmp))
+					{
+						static_cast<CSprite_Player *>(vSprite[0])->SetPlayerbIsMove(false);
+					}
+					else
+					{
+						if (!(*static_cast<CSprite_Player *>(vSprite[0])->GetPlayerbIsMove()))
+						{
+							static_cast<CSprite_Player *>(vSprite[0])->SetPlayerbIsMove(true);
+						}
+
+					}
+				}
+			}
 		}
 	}
 
@@ -212,6 +289,10 @@ void CScene_Game::Update()
 void CScene_Game::Release()
 {
 	g_TextManager->DestroyTextAll();
+	for (int i = 0; i < vSprite.size(); i++)
+	{
+		delete vSprite[i];
+	}
 	delete Pattern;
 }
 

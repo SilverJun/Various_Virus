@@ -71,6 +71,7 @@ void CTextManager::Render()
 		{
 			pTTF_Texture[i] = SDL_CreateTextureFromSurface(g_DrawManager->pRenderer, pTTF_Surface[i]);
 			SDL_RenderCopy(g_DrawManager->pRenderer, pTTF_Texture[i], NULL, &TTF_Rect[i]);
+			SDL_DestroyTexture(pTTF_Texture[i]);
 		}
 	}
 }

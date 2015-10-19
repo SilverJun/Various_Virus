@@ -19,7 +19,7 @@ private:
 	
 	int Virus_Debris_Count;		//현재 바이러스 잔해 수
 	int Virus_Debris_Eaten;		//먹은 바이러스 수
-	char Virus_Debris_Text[2][100];
+	char Virus_Debris_Text[2][120];
 	int Virus_Debris_Text_idx[2];
 
 	VirusPattern *Pattern;

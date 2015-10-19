@@ -19,6 +19,7 @@ T* Singleton<T>::GetInstance()
 	if (pSingleton == nullptr)        //싱글턴이므로 단 하나만 존재해야함
 	{
 		pSingleton = new T;
+		std::cout << "싱글턴 동적할당" << std::endl;
 	}
 	return pSingleton;
 }

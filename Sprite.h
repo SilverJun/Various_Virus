@@ -1,5 +1,7 @@
 #pragma once
 
+typedef enum tageSpriteDirection{cUP, cDOWN, cLEFT, cRIGHT, cUNKNOWN} SpriteDirection;
+
 class CSprite
 {
 protected:
@@ -7,6 +9,9 @@ protected:
 	SDL_Rect SpriteMask;
 	int x, y;
 	SDL_Point center;
+	
+	SpriteDirection SpriteDir;
+
 	float rotation;
 	SDL_RendererFlip flip;
 
@@ -38,6 +43,7 @@ public:
 	SDL_Point * GetSpriteCenter();
 	SDL_RendererFlip * GetSpriteFlip();
 
+	SpriteDirection GetSpriteDirection();
 
 	virtual void Update() = 0;
 	

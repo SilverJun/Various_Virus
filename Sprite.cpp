@@ -26,6 +26,8 @@ CSprite::CSprite(char *nName, int w, int h, int mx, int my, int mw, int mh)
 	rotation = 0;
 	flip = SDL_FLIP_NONE;
 	center.x = SpriteRect.x / 2, center.y = SpriteRect.y / 2;
+
+	SpriteDir = cUNKNOWN;
 }
 
 
@@ -134,6 +136,11 @@ SDL_Point * CSprite::GetSpriteCenter()
 SDL_RendererFlip * CSprite::GetSpriteFlip()
 {
 	return &flip;
+}
+
+SpriteDirection CSprite::GetSpriteDirection()
+{
+	return SpriteDir;
 }
 
 

@@ -7,5 +7,11 @@ public:
 	~CSprite_Player();
 
 	virtual void Update() override;
+	
+	void SetPlayerbIsMove(bool);
+	bool *GetPlayerbIsMove();
+
+private:
+	bool bIsMove;
 };
 

@@ -22,11 +22,11 @@ void CDirector::Update()
 	//cout << "Director Update()" << endl;
 	g_EventManager->Update();
 	g_SceneManager->Update();
+
 	g_TextManager->Update();
-	g_SoundManager->Update(); 
+	//g_SoundManager->Update();
+
 	g_DrawManager->Update();
-	
-	
 }
 
 
