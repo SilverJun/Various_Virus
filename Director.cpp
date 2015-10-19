@@ -27,6 +27,7 @@ void CDirector::Update()
 	//g_SoundManager->Update();
 
 	g_DrawManager->Update();
+	
 }
 
 
@@ -63,8 +64,15 @@ void CDirector::GameLoop()
 {
 	while (!GameDone)
 	{
+		
+		_CrtDumpMemoryLeaks();
+		
+
 		Update();
 		Render();
+
+		
+
 		g_TimeManager->FrameLock();
 	}
 }
