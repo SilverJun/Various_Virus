@@ -8,6 +8,8 @@ ftp://ftp.unicode.org/Public/MAPPINGS/EASTASIA/KSC  */
 * codepoint for KSC's codepoint (n, m) would be found at
 * index (n-33)*94+m-33.
 */
+
+extern "C"
 long tabksc5601[] = {
 	/* KSC 5601 -> Unicode mapping table; max codepoint = 0x7d7e */
 	0x3000, 0x3001, 0x3002, 0x00B7, 0x2025, 0x2026, 0x00A8,
