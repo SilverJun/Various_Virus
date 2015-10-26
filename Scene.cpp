@@ -10,13 +10,23 @@ CScene::CScene(int n)
 	SceneBGRect.h = WINDOW_DEFAULT_H;
 	SetSceneBGImage("./bg2.png");
 	g_TimeManager->CreateTime(n);
-	vSpriteItor = vSprite.begin();
 	nSprite = 0;
 }
 
 
 CScene::~CScene(void)
 {
+	if (vSprite.size() != 0)
+	{
+		for (int i = vSprite.size() - 1; i >= 0; i--)
+		{
+			delete vSprite[i];
+			vSprite.pop_back();
+		}
+	}
+	
+	vSprite.~vector();
+	SDL_DestroyTexture(SceneBGTexture);
 }
 
 
@@ -56,7 +66,7 @@ void CScene::Init()
 
 void CScene::Update()
 {
-	
+
 }
 
 void CScene::Render()

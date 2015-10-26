@@ -289,10 +289,6 @@ void CScene_Game::Update()
 void CScene_Game::Release()
 {
 	g_TextManager->DestroyTextAll();
-	for (int i = 0; i < vSprite.size(); i++)
-	{
-		delete vSprite[i];
-	}
 	delete Pattern;
 }
 

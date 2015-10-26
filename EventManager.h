@@ -14,7 +14,8 @@ public:
 	SDL_Event g_Event;
 
 	bool KeyProsess[9];
-	
+	const Uint8 *keystate;
+
 
 	int nKey;
 

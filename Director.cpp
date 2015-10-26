@@ -50,12 +50,12 @@ void CDirector::Release()
 	g_SceneManager->Release();
 	g_TextManager->Release();
 
-	g_DrawManager->Destroy();
-	g_EventManager->Destroy();
-	g_SoundManager->Destroy();
-	g_SceneManager->Destroy();
-	g_TimeManager->Destroy();
-	g_TextManager->Destroy();
+	//g_DrawManager->Destroy();
+	//g_EventManager->Destroy();
+	//g_SoundManager->Destroy();
+	//g_SceneManager->Destroy();
+	//g_TimeManager->Destroy();
+	//g_TextManager->Destroy();
 
 	SDL_Quit();
 }
@@ -64,15 +64,8 @@ void CDirector::GameLoop()
 {
 	while (!GameDone)
 	{
-		
-		_CrtDumpMemoryLeaks();
-		
-
 		Update();
 		Render();
-
-		
-
 		g_TimeManager->FrameLock();
 	}
 }

@@ -14,6 +14,7 @@
 #include <deque>
 #include <ctime>
 #include <cmath>
+#include <mutex>
 
 //======== 추가 라이브러리 헤더 ========
 #include <SDL.h>

@@ -45,6 +45,7 @@ void CTextManager::Init()
 	for (int i = 0; i < 10; i++)
 	{
 		string_han_idx_table[i] = false;
+		pTTF_Surface[i] = nullptr;
 	}
 
 	pTTF_Font = TTF_OpenFont("./Resource/font.ttf", point);
@@ -53,13 +54,7 @@ void CTextManager::Init()
 
 void CTextManager::Update()
 {
-	for (int i = 0; i < 10; i++)
-	{
-		if (string_han_idx_table[i])
-		{
-			pTTF_Surface[i] = TTF_RenderUNICODE_Blended(pTTF_Font, string_han[i], color);
-		}
-	}//최적화할때 옮기자.
+	
 }
 
 
@@ -104,10 +99,20 @@ int CTextManager::CreateText(char *string, int x, int y, int w, int h)
 			TTF_Rect[i].h = h;
 			han2unicode(string, string_han[i]);
 			string_han_idx_table[i] = true;
+
+			if (pTTF_Surface[i] != nullptr)
+			{
+				SDL_FreeSurface(pTTF_Surface[i]);
+				pTTF_Surface[i] = nullptr;
+			}
+			if (string_han_idx_table[i])
+			{
+				pTTF_Surface[i] = TTF_RenderUNICODE_Blended(pTTF_Font, string_han[i], color);
+			}
+
 			break;
 		}
 	}
-
 	return i;
 }
 
@@ -124,6 +129,17 @@ int CTextManager::CreateText(char *string, SDL_Rect *rect)
 			TTF_Rect[i].h = rect->h;
 			han2unicode(string, string_han[i]);
 			string_han_idx_table[i] = true;
+
+			if (pTTF_Surface[i] != nullptr)
+			{
+				SDL_FreeSurface(pTTF_Surface[i]);
+				pTTF_Surface[i] = nullptr;
+			}
+			if (string_han_idx_table[i])
+			{
+				pTTF_Surface[i] = TTF_RenderUNICODE_Blended(pTTF_Font, string_han[i], color);
+			}
+
 			break;
 		}
 	}
@@ -135,6 +151,16 @@ int CTextManager::CreateText(char *string, SDL_Rect *rect)
 void CTextManager::ModifyText(char * string, int idx)
 {
 	han2unicode(string, string_han[idx]);
+	
+	if (pTTF_Surface[idx] != nullptr)
+	{
+		SDL_FreeSurface(pTTF_Surface[idx]);
+		pTTF_Surface[idx] = nullptr;
+	}
+	if (string_han_idx_table[idx])
+	{
+		pTTF_Surface[idx] = TTF_RenderUNICODE_Blended(pTTF_Font, string_han[idx], color);
+	}
 }
 
 

@@ -7,7 +7,6 @@ class CScene
 protected:
 	//==== 스프라이트 ====
 	vector<CSprite *> vSprite;
-	vector<CSprite *>::iterator vSpriteItor;
 	int nSprite;
 	//===================
 
